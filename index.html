@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sanika's Patisserie | Premium Cakes</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">Sanika's <span class="logo-alt">Cakes</span></div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#catalog">Catalog</a></li>
+            <li><a href="#custom">Custom Order</a></li>
+            <li>
+                <button class="cart-btn" onclick="toggleCart()">
+                    <span class="cart-icon">🛒</span> 
+                    <span id="cart-count">0</span>
+                </button>
+            </li>
+        </ul>
+    </nav>
+
+    <header id="home" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Sanika's <br><span class="pink-glow">Signature Sweets</span></h1>
+            <p>Handcrafted with premium ingredients and a touch of magic.</p>
+            <a href="#catalog" class="btn-main">Explore Collection</a>
+        </div>
+    </header>
+
+    <section id="catalog" class="catalog-section">
+        <h2 class="section-title">Our Bestsellers</h2>
+        <div class="cake-grid">
+            <div class="cake-card">
+                <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=500" alt="Chocolate Truffle">
+                <div class="card-body">
+                    <h3>Chocolate Truffle</h3>
+                    <p class="price">₹799</p>
+                    <button class="add-to-cart" onclick="addToCart('Chocolate Truffle', 799)">Add to Cart</button>
+                </div>
+            </div>
+            <div class="cake-card">
+                <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=500" alt="Berry Blast">
+                <div class="card-body">
+                    <h3>Berry Blast</h3>
+                    <p class="price">₹899</p>
+                    <button class="add-to-cart" onclick="addToCart('Berry Blast', 899)">Add to Cart</button>
+                </div>
+            </div>
+            <div class="cake-card">
+                <img src="https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?w=500" alt="Vanilla Gold">
+                <div class="card-body">
+                    <h3>Vanilla Gold</h3>
+                    <p class="price">₹699</p>
+                    <button class="add-to-cart" onclick="addToCart('Vanilla Gold', 699)">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="custom" class="custom-request">
+        <div class="form-card">
+            <h2>Custom Cake Request</h2>
+            <p>Tell us your vision, and we’ll bake it to perfection.</p>
+            <form id="orderForm">
+                <input type="text" placeholder="Your Name" required>
+                <div class="row">
+                    <input type="text" placeholder="Flavour" required>
+                    <input type="number" placeholder="Weight (KG)" required>
+                </div>
+                <textarea placeholder="Special instructions (e.g., Message on cake)"></textarea>
+                <button type="submit" class="btn-submit">Submit Request</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Cart Modal Window -->
+    <div id="cart-modal" class="cart-modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="toggleCart()">&times;</span>
+            <h2>Your Cart</h2>
+            <div id="cart-items-list">
+                <!-- Items injected by JS -->
+            </div>
+            <div class="cart-summary">
+                <h3>Total: ₹<span id="cart-total-amount">0</span></h3>
+                <button class="checkout-btn" onclick="alert('Proceeding to Payment!')">Checkout</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="toast" class="toast">Added to Cart! 🍰</div>
+
+    <script src="script.js"></script>
+</body>
+</html>
